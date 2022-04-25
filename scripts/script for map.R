@@ -128,7 +128,7 @@ ri_region <- st_bbox(c(xmin = 115.4000, xmax = 115.5915,
 
 #### 5.2 create a base map ----
 rotto_map <- tm_shape(ri, bbox = ri_region) + tm_grid(n.y = 2, lines = F) + 
-  tm_polygons(border.col = "black", lwd = 4) +
+  tm_polygons(border.col = "black", lwd = 2) +
   tm_shape(sp_sites) + tm_dots(col = "Depth", size = 0.6, shape = 21, 
                                #tmap_options(max.categories = 4), 
                                palette = cs, legend.show = T) +
@@ -201,7 +201,7 @@ vp2 = viewport(x = 0.90, y = 0.63, w = 0.15, h= 0.15)
 
 
 #### 7.2. save the map with insets ----
-tmap_save(rotto_map, filename = paste(p.dir, "Rotto_map_Anita-test1.png", sep ='/'), dpi = 300, 
+tmap_save(rotto_map, filename = paste(p.dir, "Rotto_map_Anita-test2.png", sep ='/'), dpi = 300, 
           height = 5.5, width = 5, units = "in",
           insets_tm = list(wa_map,a_map),  
           insets_vp = list(vp1, vp2))
@@ -212,7 +212,7 @@ tmap_save(rotto_map, filename = paste(p.dir, "Rotto_map_Anita-test1.png", sep ='
 
 tmap_save(rotto_map, paste(p.dir, "rotto_map.png", sep = '/'))
 
-#map_save(a_map, paste(p.dir, "a_map.png", sep = '/'))
+tmap_save(a_map, paste(p.dir, "a_map.png", sep = '/'))
 
 #
 
